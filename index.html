@@ -1,94 +1,237 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portafolio-web</title>
+    <meta name="theme-color" content="#0b1020" />
+    <meta
+      name="description"
+      content="Portafolio de Juan Emanuel Flores García, desarrollador Java Full Stack Jr."
+    />
+    <title>Juan Emanuel Flores García — Desarrollador web</title>
   </head>
+
   <body>
     <div id="app">
+      <header class="encabezado">
+        <nav class="container navegacion" aria-label="Navegación principal">
+          <a href="#inicio" class="logo" aria-label="Ir al inicio">
+            JE<span>_</span>
+          </a>
+
+          <div class="menu">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="https://github.com/juanemanflores" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i> GitHub ↗
+            </a>
+            <a href="#contacto">Contacto</a>
+          </div>
+        </nav>
+      </header>
+
       <main>
-        <section class="portada container">
-          <div class="row align-items-center g-5 w-100">
-            <div class="col-12 col-lg-7">
-              <span class="terminal">juan@portfolio:~$ whoami</span>
+        <section id="inicio" class="portada container">
+          <div class="portada-texto">
+            <span class="terminal">juan@portfolio:~$ whoami</span>
 
-              <h1>
-                Juan Emanuel<br>
-                Flores García<span class="cursor">_</span>
-              </h1>
+            <h1>
+              Juan Emanuel<br />
+              Flores García<span class="cursor">_</span>
+            </h1>
 
-              <p>&lt;Desarrollador web /&gt;</p>
+            <p class="profesion">Desarrollador Java Full Stack Jr.</p>
 
-              <p class="descripcion">
-                Transformo ideas en sitios web claros,
-                funcionales y con personalidad.
-              </p>
+            <p class="descripcion">
+              Creo soluciones web combinando lógica, funcionalidad y
+              creatividad. Me interesa construir experiencias claras y
+              útiles para las personas.
+            </p>
 
-              <a href="#proyectos" class="boton-principal">
-                Ver proyectos ↗
+            <div class="acciones">
+              <a class="boton-principal" href="#proyectos">
+                Ver proyectos <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="enlace-secundario" href="#contacto">
+                Contáctame
               </a>
             </div>
 
-            <div class="col-12 col-lg-5">
-              <div class="panel-terminal">
-                <div class="panel-barra">● ● ● <span>perfil.js</span></div>
+            <div class="etiquetas">
+              <span>JAVA</span>
+              <span>FRONTEND</span>
+              <span>HACKATONES</span>
+            </div>
+          </div>
 
-                <pre><code><span class="codigo-lavanda">const</span> perfil = {
-  nombre: <span class="codigo-coral">"Juan Emanuel"</span>,
-  enfoque: <span class="codigo-coral">"Desarrollo web"</span>,
-  estado: <span class="codigo-coral">"Aprendiendo y creando"</span>
-};</code></pre>
-              </div>
+          <div class="portada-visual">
+            <span class="simbolo-fondo" aria-hidden="true">{ }</span>
+            <div class="foto-marco">
+              <div class="firma-visual">
+  <span>JAVA</span>
+  <span>WEB</span>
+  <span>PRODUCTO</span>
+</div>
+              <img
+                src="/foto-juan.jpeg"
+                alt="Retrato de Juan Emanuel Flores García"
+                class="foto-perfil"
+              />
+              <span class="foto-etiqueta">JUAN EMANUEL / DEV</span>
+            </div>
+
+            <div class="terminal-mini">
+              <span class="terminal">status.log</span>
+              <p><span>●</span> Construyendo y aprendiendo</p>
             </div>
           </div>
         </section>
-
-        <header class="encabezado">
-          <nav class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-            <a href="#" class="logo">
-              JE<span class="cursor">_</span>
-            </a>
-
-            <div class="menu d-flex flex-wrap gap-3">
-              <a href="#proyectos">./proyectos</a>
-              <a href="#sobre-mi">./sobre-mi</a>
-              <a href="#habilidades">./habilidades</a>
-              <a href="#contacto">./contacto</a>
-            </div>
-          </nav>
-        </header>
 
         <section id="proyectos" class="seccion container">
-          <span class="terminal">02 / proyectos</span>
-          <h2>Lo que estoy construyendo<span class="cursor">_</span></h2>
-          <div class="row g-4 mt-3">
-            <!-- Aquí continuaremos con las tarjetas de proyectos. -->
+          <div class="encabezado-seccion">
+            <span class="terminal"><i class="bi bi-grid-1x2-fill icono-seccion" aria-hidden="true"></i> 01 / proyectos seleccionados</span>
+            <h2>Trabajo en progreso<span class="cursor">_</span></h2>
+          </div>
+
+          <div class="lista-proyectos">
+            <article class="proyecto">
+              <span class="proyecto-numero"><i class="bi bi-cart4" aria-hidden="true"></i><span>01</span></span>
+              <figure class="proyecto-imagen">
+                <img src="/projects/imp-al3d.png" alt="Vista de la tienda en línea IMP AL3D" loading="lazy" />
+              </figure>
+              <div class="proyecto-contenido">
+                <span class="terminal">PROYECTO INTEGRADOR</span>
+                <h3>Plataforma eCommerce</h3>
+                <p>
+                  Colaboro en el desarrollo de una plataforma eCommerce para
+                  una empresa real como proyecto final del bootcamp Java Full
+                  Stack. Participo en la interfaz web y en el trabajo con Git
+                  y GitHub.
+                </p>
+                <span class="tecnologias">
+                  HTML · CSS · JavaScript · Java · Git
+                </span>
+                <a class="proyecto-link" href="https://lightcoral-stingray-699697.hostingersite.com/index.html" target="_blank" rel="noopener noreferrer">Ver IMP AL3D ↗</a>
+              </div>
+              <span class="proyecto-flecha" aria-hidden="true">↗</span>
+            </article>
+
+            <article class="proyecto">
+              <span class="proyecto-numero"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i><span>02</span></span>
+              <figure class="proyecto-imagen">
+                <img src="/projects/runup.png" alt="Vista del sitio del hackatón RUNUP" loading="lazy" />
+              </figure>
+              <div class="proyecto-contenido">
+                <span class="terminal">HACKATÓN · RUN UP</span>
+                <h3>Tienda deportiva</h3>
+                <p>
+                  Desarrollé la página de inicio de un eCommerce de productos
+                  deportivos, trabajando en la estructura y la interfaz web.
+                </p>
+                <span class="tecnologias">HTML · CSS · Git · GitHub</span>
+                <a class="proyecto-link" href="https://aalecarvajal.github.io/hackaton-runup/" target="_blank" rel="noopener noreferrer">Ver RUNUP ↗</a>
+              </div>
+              <span class="proyecto-flecha" aria-hidden="true">↗</span>
+            </article>
+
+            <article class="proyecto">
+              <span class="proyecto-numero"><i class="bi bi-journal-code" aria-hidden="true"></i><span>03</span></span>
+              <figure class="proyecto-imagen">
+                <img src="/projects/agenda-java.png" alt="Captura del proyecto de agenda telefónica desarrollado en Java" loading="lazy" />
+              </figure>
+              <div class="proyecto-contenido">
+                <span class="terminal">HACKATÓN · AGENDA TELEFÓNICA</span>
+                <h3>Agenda telefónica en Java</h3>
+                <p>
+                  Aplicación de consola para administrar contactos: agregarlos,
+                  buscarlos, listarlos, actualizar su teléfono y eliminarlos.
+                  Incluye un menú interactivo y capacidad configurable para la agenda.
+                </p>
+                <span class="tecnologias">Java · Programación orientada a objetos · Git</span>
+              </div>
+              <span class="proyecto-flecha" aria-hidden="true">↗</span>
+            </article>
           </div>
         </section>
 
-        <section id="Sobre mí" class="seccion container">
-          <span class="terminal">03 / acerca de mí</span>
-          <h2>Un poco sobre mí<span class="cursor">_</span></h2>
-          
-          
+        <section id="sobre-mi" class="seccion container">
+          <div class="encabezado-seccion">
+            <span class="terminal"><i class="bi bi-person-badge-fill icono-seccion" aria-hidden="true"></i> 02 / acerca de mí</span>
+            <h2>Código con intención<span class="cursor">_</span></h2>
+          </div>
+
+          <p class="texto-seccion">
+            Soy desarrollador Java Full Stack Jr. y estudiante de Ingeniería
+            Industrial y de Sistemas. Mi experiencia en soporte técnico y
+            análisis de datos me enseñó a investigar problemas, cuidar los
+            detalles y colaborar con otras personas. Ahora aplico ese enfoque
+            al desarrollo de soluciones web.
+          </p>
         </section>
 
-        <section id = "Habilidades" class="seccion container">
-          <span class = "terminal">04 / habilidades</span>
-          <h2>Mis herramientas<span class="cursor">_</span></h2>
+        <section id="habilidades" class="seccion container">
+          <div class="encabezado-seccion">
+            <span class="terminal"><i class="bi bi-code-slash icono-seccion" aria-hidden="true"></i> 03 / herramientas</span>
+            <h2>Tecnologías y habilidades<span class="cursor">_</span></h2>
+          </div>
 
+          <div class="habilidades-grupo">
+            <h3>Desarrollo</h3>
+            <div class="lista-habilidades">
+              <span><i class="bi bi-cup-hot-fill" aria-hidden="true"></i> Java</span>
+              <span><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript</span>
+              <span><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML5</span>
+              <span><i class="bi bi-filetype-css" aria-hidden="true"></i> CSS3</span>
+              <span><i class="bi bi-hdd-network-fill" aria-hidden="true"></i> Node.js</span>
+              <span><i class="bi bi-braces" aria-hidden="true"></i> Python</span>
+              <span><i class="bi bi-bootstrap-fill" aria-hidden="true"></i> Bootstrap</span>
+              <span><i class="bi bi-git" aria-hidden="true"></i> Git y GitHub</span>
+            </div>
+          </div>
 
+          <div class="habilidades-grupo">
+            <h3>También trabajo con</h3>
+            <div class="lista-habilidades secundarias">
+              <span>Power BI</span>
+              <span>Microsoft 365</span>
+              <span>Jira</span>
+              <span>Excel</span>
+            </div>
+          </div>
         </section>
 
-        <section id = "Contacto" class="seccion container">
-          <span class = "terminal">05 / contacto</span>
-          <h2>Construyamos algo<span class="cursor">_</span></h2>
+        <section id="contacto" class="seccion container">
+          <div class="encabezado-seccion">
+            <span class="terminal"><i class="bi bi-chat-dots-fill icono-seccion" aria-hidden="true"></i> 04 / contacto</span>
+            <h2>Contacto<span class="cursor">_</span></h2>
+          <p class="descripcion">
+            Puedes escribirme por correo o conectar conmigo en LinkedIn.
+          </p>
 
-          
+          <div class="redes">
+            <a href="mailto:juanemanflores@gmail.com">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              juanemanflores@gmail.com ↗
+            </a>
+            <a
+              href="https://www.linkedin.com/in/juanemanflores/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+              LinkedIn ↗
+            </a>
+          </div>
         </section>
       </main>
+
+      <footer class="pie container">
+        <a href="#inicio" class="logo">JE<span>_</span></a>
+        <p>Diseñado y construido por Juan Emanuel.</p>
+        <a href="#inicio">Volver arriba ↑</a>
+      </footer>
     </div>
 
     <script type="module" src="/src/main.js"></script>
