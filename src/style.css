@@ -257,22 +257,10 @@ textarea:focus-visible {
   filter: saturate(0.88);
 }
 
-.foto-etiqueta {
-  position: absolute;
-  right: -18px;
-  bottom: 22px;
-  padding: 10px 13px;
-  background: linear-gradient(110deg, var(--blue), var(--violet));
-  color: #ffffff;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
 .terminal-mini {
   position: relative;
-  width: 85%;
-  margin: -26px 0 0 -35px;
+  width: 90%;
+  margin: 16px 0 0 auto;
   padding: 15px 18px;
   border: 1px solid var(--borde);
   background: #151519f2;
@@ -610,24 +598,6 @@ textarea:focus-visible {
   content: "";
 }
 
-.firma-visual {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 20px;
-  color: var(--texto-secundario);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-}
-
-.firma-visual span:first-child {
-  color: var(--coral);
-}
-
-.firma-visual span:last-child {
-  color: var(--lavanda);
-}
-
 .proyecto-numero {
   display: flex;
   justify-content: center;
@@ -830,45 +800,51 @@ textarea:focus-visible {
   stroke-width: 1.5;
 }
 
-.garabato {
+.iconos-fondo {
   position: absolute;
-  z-index: 3;
-  display: grid;
-  justify-items: center;
-  gap: 4px;
-  padding: 8px 10px;
-  border: 1px solid #246bfd88;
-  background: #11182aee;
-  box-shadow: 8px 8px 0 #7438e844;
-  color: var(--lavanda);
-  font-size: 9px;
-  letter-spacing: .06em;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.garabato svg {
+.iconos-fondo > * {
+  position: absolute;
   display: block;
-  width: 66px;
-  stroke: var(--blue);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.2;
+  color: #8db2ff;
+  font-size: 22px;
+  line-height: 1;
+  opacity: .15;
 }
 
-.garabato-musica {
-  top: 3%;
-  right: -42px;
-  transform: rotate(5deg);
+.iconos-fondo .icono-codigo {
+  color: var(--lavanda);
+  font-family: monospace;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.12em;
 }
 
-.garabato-musica svg { width: 78px; stroke: var(--lavanda); }
-
-.garabato-codigo {
-  bottom: 22%;
-  right: -42px;
-  transform: rotate(-7deg);
-}
-
-.garabato-codigo svg { stroke: var(--coral); }
+.iconos-fondo > :nth-child(1) { top: 4%; left: 5%; transform: rotate(-12deg); }
+.iconos-fondo > :nth-child(2) { top: 8%; right: 9%; color: var(--coral); }
+.iconos-fondo > :nth-child(3) { top: 17%; left: 12%; transform: rotate(-8deg); }
+.iconos-fondo > :nth-child(4) { top: 25%; right: 6%; }
+.iconos-fondo > :nth-child(5) { top: 32%; left: 4%; color: var(--coral); }
+.iconos-fondo > :nth-child(6) { top: 39%; right: 15%; }
+.iconos-fondo > :nth-child(7) { top: 47%; left: 9%; }
+.iconos-fondo > :nth-child(8) { top: 54%; right: 5%; color: var(--coral); }
+.iconos-fondo > :nth-child(9) { top: 61%; left: 16%; }
+.iconos-fondo > :nth-child(10) { top: 68%; right: 13%; }
+.iconos-fondo > :nth-child(11) { top: 74%; left: 5%; color: var(--coral); }
+.iconos-fondo > :nth-child(12) { top: 80%; right: 7%; }
+.iconos-fondo > :nth-child(13) { top: 85%; left: 13%; }
+.iconos-fondo > :nth-child(14) { top: 90%; right: 17%; }
+.iconos-fondo > :nth-child(15) { top: 94%; left: 6%; color: var(--coral); }
+.iconos-fondo > :nth-child(16) { top: 22%; left: 27%; color: var(--lavanda); }
+.iconos-fondo > :nth-child(17) { top: 57%; right: 26%; }
+.iconos-fondo > :nth-child(18) { top: 77%; right: 28%; color: var(--coral); }
 
 /* 14. TARJETAS DE PROYECTO AMPLIAS E INTERACTIVAS */
 .lista-proyectos {
@@ -1014,11 +990,6 @@ textarea:focus-visible {
 }
 
 @media (max-width: 767.98px) {
-  .garabato-musica { right: -20px; top: -28px; }
-  .garabato-codigo { right: -20px; bottom: 17%; }
-  .garabato svg { width: 46px; }
-  .garabato-musica svg { width: 62px; }
-
   .lista-proyectos { gap: 16px; }
 
   .proyecto {
@@ -1056,6 +1027,8 @@ textarea:focus-visible {
 
 .rayos-fondo path:nth-child(even) { stroke-width: 1.1; }
 
+.iconos-fondo { z-index: -1; height: auto; }
+
 .portada-visual { isolation: isolate; }
 
 .foto-marco,
@@ -1063,43 +1036,18 @@ textarea:focus-visible {
 
 .foto-perfil { filter: none; }
 
-.garabato {
-  z-index: -1;
-  display: block;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  opacity: .55;
-}
-
-.garabato-musica {
-  top: 13%;
-  right: -24px;
-}
-
-.garabato-musica svg { width: 42px; stroke-width: 1.7; }
-
-.garabato-codigo {
-  bottom: 20%;
-  left: -22px;
-}
-
-.garabato-codigo svg { width: 34px; stroke-width: 1.8; }
-
 .simbolo-fondo {
   top: -28px;
   right: -18px;
-  font-size: clamp(125px, 17vw, 205px);
-  opacity: .7;
+  font-size: clamp(96px, 13vw, 160px);
+  opacity: .25;
 }
 
 @media (max-width: 767.98px) {
-  .garabato-musica { top: -24px; right: -14px; }
-  .garabato-codigo { bottom: 17%; left: -12px; }
-  .garabato-musica svg { width: 34px; }
-  .garabato-codigo svg { width: 28px; }
-  .simbolo-fondo { top: -20px; right: -10px; font-size: 140px; }
+  .iconos-fondo > * { font-size: 16px; }
+  .iconos-fondo .icono-codigo { font-size: 14px; }
+  .iconos-fondo > :nth-child(even) { opacity: .09; }
+  .simbolo-fondo { top: -20px; right: -10px; font-size: 110px; }
 }
 
 /* Las tarjetas abren el sitio; el botón aparte amplía la captura. */
