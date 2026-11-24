@@ -31,6 +31,8 @@ body {
 }
 
 #app {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -806,4 +808,238 @@ textarea:focus-visible {
 .proyecto-link:hover {
   border-color: var(--coral);
   color: var(--coral);
+}
+
+/* 13. RAYOS Y GARABATOS PERSONALES: MÚSICA + DESARROLLO */
+.rayos-fondo {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #7438e84f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.rayos-fondo path:nth-child(even) {
+  stroke: #246bfd45;
+  stroke-width: 1.5;
+}
+
+.garabato {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 8px 10px;
+  border: 1px solid #246bfd88;
+  background: #11182aee;
+  box-shadow: 8px 8px 0 #7438e844;
+  color: var(--lavanda);
+  font-size: 9px;
+  letter-spacing: .06em;
+}
+
+.garabato svg {
+  display: block;
+  width: 66px;
+  stroke: var(--blue);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+.garabato-musica {
+  top: 3%;
+  right: -42px;
+  transform: rotate(5deg);
+}
+
+.garabato-musica svg { width: 78px; stroke: var(--lavanda); }
+
+.garabato-codigo {
+  bottom: 22%;
+  right: -42px;
+  transform: rotate(-7deg);
+}
+
+.garabato-codigo svg { stroke: var(--coral); }
+
+/* 14. TARJETAS DE PROYECTO AMPLIAS E INTERACTIVAS */
+.lista-proyectos {
+  display: grid;
+  gap: 22px;
+  border-top: 0;
+}
+
+.proyecto {
+  grid-template-columns: 48px minmax(290px, .95fr) minmax(0, 1.05fr) 24px;
+  gap: 28px;
+  min-height: 330px;
+  padding: 30px;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: linear-gradient(120deg, #11182a, #0e1423 68%, #151226);
+}
+
+.proyecto:hover {
+  padding-right: 30px;
+  padding-left: 30px;
+  border-color: #246bfd88;
+  background: linear-gradient(120deg, #151d32, #101629 68%, #19142e);
+}
+
+.proyecto-imagen {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid #246bfd70;
+  border-radius: 10px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: zoom-in;
+  box-shadow: 0 16px 36px #02040a70;
+}
+
+.proyecto-imagen img:not([hidden]) {
+  transition: transform .4s ease, filter .3s ease;
+}
+
+.proyecto-imagen:hover img,
+.proyecto-imagen:focus-visible img {
+  transform: scale(1.035);
+  filter: brightness(.78);
+}
+
+.imagen-ampliar {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid #c4b5fd60;
+  border-radius: 999px;
+  background: #0b1020e8;
+  color: var(--texto);
+  font-size: 10px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.proyecto-imagen:hover .imagen-ampliar,
+.proyecto-imagen:focus-visible .imagen-ampliar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proyecto-imagen:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+}
+
+.proyecto h3 { font-size: clamp(25px, 3vw, 36px); }
+.proyecto p { font-size: 15px; }
+.proyecto-numero .bi { width: 44px; height: 44px; }
+
+/* 15. VISTA AMPLIADA DE CAPTURAS */
+.visor-proyecto {
+  position: fixed;
+  width: min(94vw, 1180px);
+  max-width: none;
+  max-height: 92vh;
+  padding: 22px;
+  overflow: visible;
+  border: 1px solid #7438e899;
+  border-radius: 16px;
+  background: #0b1020;
+  color: var(--texto);
+  box-shadow: 0 24px 90px #000b, 0 0 50px #246bfd30;
+}
+
+.visor-proyecto::backdrop {
+  background: #050711dc;
+  backdrop-filter: blur(7px);
+}
+
+.visor-imagen {
+  display: block;
+  width: 100%;
+  max-height: calc(92vh - 92px);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.visor-titulo {
+  margin: 14px 44px 0 0;
+  color: var(--lavanda);
+  font-size: 13px;
+}
+
+.visor-cerrar {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #c4b5fd66;
+  border-radius: 50%;
+  background: #0b1020e8;
+  color: #fff;
+  cursor: pointer;
+}
+
+.visor-cerrar:hover { background: var(--violet); }
+
+@media (max-width: 991.98px) {
+  .proyecto {
+    grid-template-columns: 38px minmax(230px, .9fr) minmax(0, 1.1fr) 20px;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .proyecto:hover { padding-right: 24px; padding-left: 24px; }
+}
+
+@media (max-width: 767.98px) {
+  .garabato-musica { right: -20px; top: -28px; }
+  .garabato-codigo { right: -20px; bottom: 17%; }
+  .garabato svg { width: 46px; }
+  .garabato-musica svg { width: 62px; }
+
+  .lista-proyectos { gap: 16px; }
+
+  .proyecto {
+    grid-template-columns: 34px minmax(0, 1fr) 22px;
+    gap: 10px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .proyecto:hover { padding-right: 18px; padding-left: 18px; }
+  .proyecto-imagen { grid-column: 1 / -1; grid-row: 1; margin-bottom: 8px; }
+  .proyecto-numero { grid-column: 1; grid-row: 2; }
+  .proyecto-contenido { grid-column: 2 / 4; grid-row: 2; }
+  .proyecto-flecha { grid-column: 3; grid-row: 3; }
+
+  .proyecto h3 { font-size: 25px; }
+  .imagen-ampliar { opacity: 1; transform: none; }
+  .visor-proyecto { padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proyecto-imagen img:not([hidden]),
+  .imagen-ampliar { transition: none; }
 }
