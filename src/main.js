@@ -8,8 +8,8 @@ const tituloAmpliado = document.querySelector('.visor-titulo')
 
 document.querySelectorAll('[data-image-preview]').forEach((boton) => {
   boton.addEventListener('click', () => {
-    const imagen = boton.querySelector('img')
     const proyecto = boton.closest('.proyecto')
+    const imagen = proyecto.querySelector('.proyecto-imagen img')
 
     imagenAmpliada.src = imagen.currentSrc || imagen.src
     imagenAmpliada.alt = imagen.alt

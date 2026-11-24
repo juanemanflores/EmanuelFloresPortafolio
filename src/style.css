@@ -1101,3 +1101,91 @@ textarea:focus-visible {
   .garabato-codigo svg { width: 28px; }
   .simbolo-fondo { top: -20px; right: -10px; font-size: 140px; }
 }
+
+/* Las tarjetas abren el sitio; el botón aparte amplía la captura. */
+.proyecto { position: relative; }
+
+.proyecto:has(.proyecto-link) { cursor: pointer; }
+
+.proyecto-link::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+}
+
+.proyecto-link:focus-visible::after {
+  outline: 2px solid var(--coral);
+  outline-offset: 4px;
+}
+
+.proyecto-imagen { cursor: default; }
+
+.proyecto-imagen img:not([hidden]) {
+  transition: transform .35s ease, filter .25s ease;
+}
+
+.proyecto:has(.proyecto-link):hover .proyecto-imagen img {
+  transform: scale(1.025);
+  filter: brightness(.68);
+}
+
+.imagen-visitar {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  padding: 10px 14px;
+  border: 1px solid #c4b5fd80;
+  border-radius: 999px;
+  background: #0b1020e8;
+  color: var(--texto);
+  font-size: 11px;
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 5px));
+  transition: opacity .2s ease, transform .2s ease;
+  pointer-events: none;
+}
+
+.proyecto:has(.proyecto-link):hover .imagen-visitar,
+.proyecto:has(.proyecto-link):focus-within .imagen-visitar {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.boton-ampliar {
+  position: absolute;
+  z-index: 2;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #c4b5fd80;
+  border-radius: 50%;
+  background: #0b1020e8;
+  color: var(--texto);
+  cursor: zoom-in;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity .2s ease, transform .2s ease, background .2s ease;
+}
+
+.proyecto-imagen:hover .boton-ampliar,
+.proyecto-imagen:focus-within .boton-ampliar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.boton-ampliar:hover { background: var(--violet); }
+
+@media (max-width: 767.98px) {
+  .boton-ampliar {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
